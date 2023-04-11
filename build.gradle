@@ -20,6 +20,12 @@ allprojects {
     }
 }
 
+task generateVersionTxt {
+    doLast {
+        file("./version.txt").text = android.defaultConfig.versionName
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
